@@ -47,7 +47,6 @@ class VelocityObserverPlugin : public plugin::Plugin {
     odom.pitchspeed = w.y();
     odom.yawspeed = w.z();
 
-    std::cout << "SENDING ODOM MESSAGE" << std::endl;
     uas->send_message(odom);
   }
 
