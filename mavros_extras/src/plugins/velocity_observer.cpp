@@ -40,12 +40,13 @@ class VelocityObserverPlugin : public plugin::Plugin {
     // (dakre) make this unique from odom plugin
     odom.frame_id = 99;
     odom.time_usec = usec;
-    odom.vx = v.x();
-    odom.vy = v.y();
-    odom.vz = v.z();
-    odom.rollspeed = w.x();
-    odom.pitchspeed = w.y();
-    odom.yawspeed = w.z();
+    odom.x = v.x();
+    odom.y = v.y();
+    odom.z = v.z();
+
+    // (dakre) bastardizing quaternion with ncams
+    const int ncams = w.z();
+    odom.q[0] = ncams;
 
     uas->send_message(odom);
   }
