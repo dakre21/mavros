@@ -283,7 +283,8 @@ private:
 
     // Set Thrust scaling in px4_config.yaml, setpoint_raw block.
     // ignore thrust is false by default, unless no thrust scaling is set or thrust is zero
-    auto ignore_thrust = req->thrust != 0.0 && std::isnan(thrust_scaling);
+    //auto ignore_thrust = req->thrust != 0.0 && std::isnan(thrust_scaling);
+    auto ignore_thrust = false;
 
     if (ignore_thrust) {
       // I believe it's safer without sending zero thrust, but actually ignoring the actuation.

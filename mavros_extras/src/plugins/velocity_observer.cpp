@@ -36,17 +36,12 @@ class VelocityObserverPlugin : public plugin::Plugin {
   void send_velocity_estimate(const uint64_t usec, const Eigen::VectorXd& v,
                               const Eigen::Vector3d w) {
     mavlink::common::msg::ODOMETRY odom{};
+    (void)w;
 
     // (dakre) make this unique from odom plugin
     odom.frame_id = 99;
     odom.time_usec = usec;
-    odom.x = v.x();
-    odom.y = v.y();
-    odom.z = v.z();
-
-    // (dakre) bastardizing quaternion with ncams
-    const int ncams = w.z();
-    odom.q[0] = ncams;
+    odom.vy = v.y();
 
     uas->send_message(odom);
   }

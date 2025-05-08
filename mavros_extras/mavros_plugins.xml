@@ -246,5 +246,17 @@ Can use either wheel's RPM or WHEEL_DISTANCE messages (the latter gives better a
 Send velocity estimation from various vision estimators
 to FCU for control.</description>
   </class>
+  <class name="joystick_to_rc" type="mavros::plugin::PluginFactoryTemplate&lt;mavros::extra_plugins::JoystickToRCPlugin&gt;" base_class_type="mavros::plugin::PluginFactory">
+    <description>@brief Joystick to RC plugin
+@plugin joystick_to_rc
+
+Joystick to RC</description>
+  </class>
+  <class name="joystick_to_attitude" type="mavros::plugin::PluginFactoryTemplate&lt;mavros::extra_plugins::JoystickToAttitudePlugin&gt;" base_class_type="mavros::plugin::PluginFactory">
+    <description>@brief Joystick to Attitude Plugin
+@plugin joystick_to_attitude
+
+      Joystick to Attitude</description>
+  </class>
 </library>
 <!-- [[[end]]] (checksum: b45714611896c0f7cf634dc7aaf2cbd6) -->

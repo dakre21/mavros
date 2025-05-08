@@ -130,6 +130,8 @@ add_library(mavros_extras_plugins SHARED
   src/plugins/vision_speed_estimate.cpp
   src/plugins/wheel_odometry.cpp
   src/plugins/velocity_observer.cpp
+  src/plugins/joystick_to_rc.cpp
+  src/plugins/joystick_to_attitude.cpp
   # [[[end]]] (checksum: 1f8cd51fa90b89b27ee35d276b5f8c83)
 )
 ament_target_dependencies(mavros_extras_plugins
